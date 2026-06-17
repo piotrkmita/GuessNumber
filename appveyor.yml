@@ -1,0 +1,13 @@
+# Minimal AppVeyor config to produce ONE quick, successful build on the free
+# OSS plan — enough to capture build / job / log / artifacts shapes.
+# Place at the ROOT of piotrkmita/GuessNumber (branch: master) and push.
+version: 1.0.{build}
+image: Ubuntu2204
+build: off
+test: off
+build_script:
+  - sh: echo "hello from appveyor" > hello.txt
+  - sh: cat hello.txt
+artifacts:
+  - path: hello.txt
+    name: greeting
